@@ -17,34 +17,36 @@ export const Navigation: React.FC = () => {
   return (
     <>
       {/* Top Bar for Desktop/Tablet and Header */}
-      <header className="sticky top-0 z-30 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-rose-100 dark:border-slate-800 transition-colors">
-        <div className="max-w-3xl mx-auto px-4 py-3 flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-rose-500 to-pink-400 flex items-center justify-center text-white shadow-sm font-bold text-sm">
-              🌸
+      <header className="sticky top-0 z-30 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-rose-100/80 dark:border-slate-800 transition-colors shadow-xs">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
+          <div className="flex items-center space-x-3 cursor-pointer" onClick={() => setCurrentTab('home')}>
+            <div className="w-10 h-10 rounded-2xl bg-rose-500 flex items-center justify-center text-white shadow-md shadow-rose-200 dark:shadow-none">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
             </div>
             <div>
-              <h1 className="text-lg font-bold text-slate-800 dark:text-slate-100 tracking-tight">
+              <h1 className="text-lg font-extrabold text-slate-800 dark:text-slate-100 tracking-tight">
                 Cycle Tracker
               </h1>
-              <p className="text-[10px] text-rose-500 dark:text-rose-400 font-medium tracking-wider uppercase">
+              <p className="text-[10px] text-rose-500 dark:text-rose-400 font-bold tracking-wider uppercase">
                 Privacy Protected
               </p>
             </div>
           </div>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center space-x-1">
+          <nav className="hidden md:flex items-center space-x-1.5 bg-rose-50/50 dark:bg-slate-800/50 p-1.5 rounded-2xl border border-rose-100/50 dark:border-slate-800">
             {navItems.map(item => {
               const active = currentTab === item.id;
               return (
                 <button
                   key={item.id}
                   onClick={() => setCurrentTab(item.id)}
-                  className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-xl text-sm font-medium transition-all ${
+                  className={`flex items-center space-x-2 px-3.5 py-2 rounded-xl text-xs font-bold transition-all ${
                     active
-                      ? 'bg-rose-500 text-white shadow-sm'
-                      : 'text-slate-600 dark:text-slate-300 hover:bg-rose-50 dark:hover:bg-slate-800'
+                      ? 'bg-rose-500 text-white shadow-md shadow-rose-200 dark:shadow-none'
+                      : 'text-slate-600 dark:text-slate-300 hover:text-rose-500 hover:bg-white/80 dark:hover:bg-slate-800'
                   }`}
                 >
                   {item.icon}

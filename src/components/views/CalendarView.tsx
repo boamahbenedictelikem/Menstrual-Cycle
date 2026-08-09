@@ -34,12 +34,14 @@ export const CalendarView: React.FC = () => {
 
   return (
     <div className="space-y-6 pb-20 md:pb-8">
-      {/* Month Navigation Header */}
-      <div className="bg-white dark:bg-slate-900 rounded-3xl p-5 border border-slate-100 dark:border-slate-800 shadow-lg space-y-4">
+      {/* Month Navigation Header and Calendar Card */}
+      <div className="bg-white dark:bg-slate-900 rounded-[32px] sm:rounded-[40px] p-6 sm:p-8 border border-rose-50 dark:border-slate-800 shadow-sm space-y-6">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <CalendarIcon className="w-5 h-5 text-rose-500" />
-            <h2 className="text-xl font-extrabold text-slate-800 dark:text-slate-100">
+          <div className="flex items-center space-x-3">
+            <div className="p-2.5 bg-rose-50 dark:bg-rose-950/60 rounded-2xl text-rose-500">
+              <CalendarIcon className="w-5 h-5" />
+            </div>
+            <h2 className="text-xl sm:text-2xl font-black text-slate-800 dark:text-slate-100 tracking-tight">
               {format(currentMonth, 'MMMM yyyy')}
             </h2>
           </div>
@@ -48,20 +50,20 @@ export const CalendarView: React.FC = () => {
             <button
               onClick={() => setCurrentMonth(prev => subMonths(prev, 1))}
               aria-label="Previous month"
-              className="p-2 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-300"
+              className="p-2.5 rounded-2xl border border-rose-100 dark:border-slate-800 hover:bg-rose-50 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-300"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <button
               onClick={() => setCurrentMonth(new Date())}
-              className="px-3 py-1.5 text-xs font-semibold rounded-xl bg-rose-50 dark:bg-rose-950/60 text-rose-600 dark:text-rose-300 hover:bg-rose-100 transition-colors"
+              className="px-4 py-2 text-xs font-extrabold rounded-2xl bg-rose-50 dark:bg-rose-950/60 text-rose-500 dark:text-rose-400 hover:bg-rose-100 transition-colors"
             >
               Today
             </button>
             <button
               onClick={() => setCurrentMonth(prev => addMonths(prev, 1))}
               aria-label="Next month"
-              className="p-2 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-300"
+              className="p-2.5 rounded-2xl border border-rose-100 dark:border-slate-800 hover:bg-rose-50 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-300"
             >
               <ChevronRight className="w-5 h-5" />
             </button>

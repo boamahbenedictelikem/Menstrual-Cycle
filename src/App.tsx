@@ -32,10 +32,10 @@ const MainAppContent: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-rose-50/40 dark:bg-slate-950 text-slate-800 dark:text-slate-100 font-sans transition-colors selection:bg-rose-500 selection:text-white">
+    <div className="min-h-screen bg-[#FFF8F8] dark:bg-slate-950 text-slate-800 dark:text-slate-100 font-sans transition-colors selection:bg-rose-500 selection:text-white">
       <Navigation />
 
-      <main className="max-w-3xl mx-auto px-4 py-6">
+      <main className="max-w-5xl mx-auto px-4 sm:px-6 py-6">
         {renderView()}
       </main>
 
