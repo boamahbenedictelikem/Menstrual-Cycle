@@ -1,0 +1,6 @@
+{
+  "name": "Cycle Tracker",
+  "description": "A modern, privacy-focused menstrual cycle tracking and fertility estimation application with calendar views, symptom logging, cycle history, and custom reminders.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
